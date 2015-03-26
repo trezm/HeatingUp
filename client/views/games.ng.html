@@ -1,0 +1,12 @@
+<form class="form-group new-game-form">
+	<label class="new-game-item">Quick Name</label>
+	<input class="form-control new-game-item" ng-model="newGame.quickName">
+	<button class="btn btn-success new-game-item new-game-add-btn" ng-click="addGame(newGame)">Add</button>
+</form>
+
+<ul class="games">
+	<li ng-repeat="game in games | filter:{hidden:false}">
+		[{{ game.createdAt }}] <a href="/games/{{ game._id }}">{{ game.quickName }}</a>
+		<button class="btn btn-danger btn-hide" ng-click="hideGame(game)">Hide</button>
+	</li>
+</ul>

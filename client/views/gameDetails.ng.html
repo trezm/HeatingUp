@@ -1,0 +1,35 @@
+<h1>
+	{{ game.quickName }}
+</h1>
+
+<div class="text-center shots">
+{{ currentTurn.made }} / {{ currentTurn.missed }}
+</div>
+<form class="form-group">
+	<div class="row">
+		<div class="col-md-6">
+			<button class="btn btn-success btn-shot" ng-click="made()">Made</button>
+		</div>
+		<div class="col-md-6">
+			<button class="btn btn-danger btn-shot" ng-click="missed()">Missed</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<button class="btn btn-warning btn-shot" ng-click="endCurrentTurn()">End Turn</button>
+		</div>
+	</div>
+</form>
+
+<div>
+	<h2>
+		Stats
+	</h2>
+	<p>Shot Percentage: {{ shotPercentage() }}%</p>
+</div>
+
+<ul>
+	<li ng-repeat="turn in turns">
+		Turn {{ turn.index + 1 }}: {{ turn.made }} / {{ turn.missed }}
+	</li>
+</ul>
